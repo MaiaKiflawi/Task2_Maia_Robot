@@ -6,18 +6,21 @@ using System.Threading.Tasks;
 
 namespace Robots_inc
 {
-    public class OperationalWorker //1. כתבו את המחלקה המתאימה להורשה 
+    public class OperationalWorker :Worker 
     {
-        //2. השלימות את התכונות החסרות
+        private double hourlyPay;
+        private int workHours;
 
-        public OperationalWorker(string name, string id, DateTime bDate, string pass)
+        public OperationalWorker(string name, string id, DateTime bDate, string pass, double hourlyPay, int workHours)
             : base(name, id, bDate, pass)
         {
-            //3. השלימו את הקוד החסר לשמירת שכר בתכונה המתאימה
-            // ?האם נדרשים פרמטרים נוספים
+           this.hourlyPay = hourlyPay;
+            this.workHours = workHours;
         }
 
-        //4. כתבו פעולה דורסת לחישוב שכר
-
+        public override double WorkerSalary()
+        {
+            return hourlyPay * workHours;
+        }
     }
 }
