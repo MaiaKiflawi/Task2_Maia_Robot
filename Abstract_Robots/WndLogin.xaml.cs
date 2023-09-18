@@ -27,6 +27,9 @@ namespace Robots_inc
         public MainWindow()
         {
             InitializeComponent();
+            workers = AllWorkersLst();
+            activeRobots = AllRobotsLst();
+            activeMissions = AllMissionsLst();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -35,19 +38,47 @@ namespace Robots_inc
             this.Close();
         }
 
-
         //משימה 1
-        // : כתבו פעולה המחזירה אוסף של 6 עובדים 
-        //מנכ"ל אחד, 2 מנהלי תפעול ו-3 עובדי תפעול
-        //כתבו זימון לפעולה שכתבתם בפעולה הבונה של החלון
+        public List<Worker> AllWorkersLst()
+        {
+            List<Worker> workersLst = new List<Worker>();
+            workersLst.Add(new OperationalWorker("Jake", "123456789", DateTime.Now, "pass1", 40, 12));
+            workersLst.Add(new OperationalWorker("Emma", "223456789", DateTime.Now, "pass2", 40, 12));
+            workersLst.Add(new OperationalWorker("Mike", "323456789", DateTime.Now, "pass3", 32, 10));
+            workersLst.Add(new OperationManager(52.5, 8, 2, "Josef", "987654321", DateTime.Now, "4pass"));
+            workersLst.Add(new OperationManager(55, 12, 2, "Samantha", "887654321", DateTime.Now, "5pass"));
+            workersLst.Add(new GeneralManager(20000, 10, 4, "Jimmy", "1928374655", DateTime.Now, "6pass6"));
+            return workersLst;
+        }
 
         //משימה 2
-        //כתבו פעולה המחזירה אוסף של 8 רובוטים
-        //כתבו זימון לפעולה שכתבתם בפעולה הבונה של החלון
+        public List<RobotSpy> AllRobotsLst()
+        {
+            List<RobotSpy> robotsLst = new List<RobotSpy>();
+            robotsLst.Add(new RobotWheels());
+            robotsLst.Add(new RobotWheels());
+            robotsLst.Add(new RobotWheels());
+            robotsLst.Add(new RobotQuad());
+            robotsLst.Add(new RobotQuad());
+            robotsLst.Add(new RobotQuad());
+            robotsLst.Add(new RobotFly());
+            robotsLst.Add(new RobotFly());
+            return robotsLst;
+        }
+
 
         //משימה 3
-        //כתבו פעולה המחזירה אוסף של 5 משימות
-        //כתבו זימון לפעולה שכתבתם בפעולה הבונה של החלון       
+        public List<Mission> AllMissionsLst()
+        {
+            List<Mission> missionsLst = new List<Mission>();
+            missionsLst.Add(new Mission(DateTime.Now, "desc1"));
+            missionsLst.Add(new Mission(DateTime.Now, "desc2"));
+            missionsLst.Add(new Mission(DateTime.Now, "desc3"));
+            missionsLst.Add(new Mission(DateTime.Now, "desc4"));
+            missionsLst.Add(new Mission(DateTime.Now, "desc5"));
+            return missionsLst;
+        }
+
 
         //משימה 4
         //login כתבו פעולה המגיבה לללחיצה על כפתור 
@@ -56,10 +87,18 @@ namespace Robots_inc
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             //...אם מספר הזיהוי והסיסמה תואמים לעובד ברשימה, אז
-            Worker worker = workers[?];
-            WndMain main = new WndMain(worker, activeMissions, activeRobots, workers);
-            main.ShowDialog();
 
+            foreach (var w in workers)
+            {
+                if (tbxID.Text.Equals(w.GetIdNumber())
+                    && tbxPassword.Password.Equals(w.GetPassword()))
+                {
+                    Worker worker = w;
+                    WndMain main = new WndMain(worker, activeMissions, activeRobots, workers);
+                    main.ShowDialog();
+                    return;
+                }
+            }
         }
     }
 }

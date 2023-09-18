@@ -8,15 +8,11 @@ namespace Robots_inc
 {
     public class RobotQuad : RobotSpy
     {
-        private int legID;
-        private int dir;
+        protected int legID;
+        protected int dir;
 
         //1. עדכנו את הפעולה הבונה כך שתתאים לפעולת במחלקת העל
-        public RobotQuad(int legID, int dir) : base("QuadSpy", DateTime.Now, 100)
-        {
-            this.legID = legID;
-            this.dir = dir;
-        }
+        public RobotQuad() : base("QuadSpy", DateTime.Now, 100) { }
 
         public override void MoveBackward()
         {

@@ -44,7 +44,7 @@
         
         <StackPanel Orientation="Vertical">
             <TextBlock x:Name="tbHeader" Grid.Row="0" Grid.ColumnSpan="4"
-                   Text="Worker name + type" Style="{StaticResource tbHeader}"/>
+                   Style="{StaticResource tbHeader}"/>
         <StackPanel x:Name="workPanel" Grid.Row="2"/>
 
     </StackPanel>

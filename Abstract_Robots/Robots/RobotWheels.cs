@@ -8,36 +8,31 @@ namespace Robots_inc
 {
     public class RobotWheels : RobotSpy
     {
-        private int rightDir;
-        private int leftDir;
+        protected int rightDir;
+        protected int leftDir;
 
-        public RobotWheels(int rightDir, int leftDir) : base("Spyke", DateTime.Now, 100)
-        {
-            this.rightDir = rightDir;
-            this.leftDir = leftDir;
-        }
-
+        public RobotWheels() : base("Spyke", DateTime.Now, 100) { }
 
         public override void MoveForward() 
         {
-            this.TurnWheels(1, 1);
+            TurnWheels(1, 1);
             SetBatteryStatus(GetBatteryStatus() - 4.5);
         }
         public override void TurnRight() 
         {
-            this.TurnWheels(-1, 1);
+            TurnWheels(-1, 1);
             SetBatteryStatus(GetBatteryStatus() - 4.5);
         }
 
         public override void MoveBackward()
         {
-            this.TurnWheels(-1, -1);
+            TurnWheels(-1, -1);
             SetBatteryStatus(GetBatteryStatus() - 4.5);
         }
 
         public override void TurnLeft()
         {
-            this.TurnWheels(1, -1);
+            TurnWheels(1, -1);
             SetBatteryStatus(GetBatteryStatus() - 4.5);
         }
 

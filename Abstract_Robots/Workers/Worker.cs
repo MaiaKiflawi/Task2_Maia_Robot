@@ -8,10 +8,10 @@ namespace Robots_inc
 {
     public abstract class Worker
     {
-        private string fullName;
-        private string idNumber;
-        private DateTime birthDate;
-        private string password;
+        protected string fullName;
+        protected string idNumber;
+        protected DateTime birthDate;
+        protected string password;
 
 
         public Worker(string name, string id, DateTime bDate, string pass)

@@ -8,9 +8,9 @@ namespace Robots_inc
 {
     public class OperationManager : Worker
     {
-        private double hourlyPay;
-        private int workHours;
-        private int tasksDone;
+        protected double hourlyPay;
+        protected int workHours;
+        protected int tasksDone;
 
         public OperationManager(double hourlyPay, int workHours, int tasksDone, string name, string id, DateTime bDate, string pass)
             : base(name, id, bDate, pass)

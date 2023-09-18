@@ -9,14 +9,11 @@ namespace Robots_inc
     
     class RobotFly : RobotSpy
     {
-        private int ID;
-        private int dir;
+        protected int ID;
+        protected int dir;
 
-        public RobotFly(int ID, int dir) : base("FlyRobot", DateTime.Now, 100) 
-        {
-            this.ID = ID;
-            this.dir = dir;
-        }
+        public RobotFly() : base("FlyRobot", DateTime.Now, 100) { }
+
         public override void MoveBackward()
         {
             for (int i = 0; i < 6; i++)

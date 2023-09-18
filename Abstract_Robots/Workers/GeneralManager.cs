@@ -8,11 +8,11 @@ namespace Robots_inc
 {
     public class GeneralManager : Worker
     {
-        private double monthlyPay;
-        private int workMonths;
-        private int activeRobots;
+        protected double monthlyPay;
+        protected int workMonths;
+        protected int activeRobots;
 
-        public GeneralManager(double monthlyPay, int workMonths, int activeRobots,string name, string id, DateTime bDate, string pass, double monthlySalary)
+        public GeneralManager(double monthlyPay, int workMonths, int activeRobots,string name, string id, DateTime bDate, string pass)
             :base (name,id,bDate,pass)
         {
             this.monthlyPay = monthlyPay;

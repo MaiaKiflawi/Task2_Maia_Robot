@@ -9,9 +9,9 @@ namespace Robots_inc
 {
 	public abstract class RobotSpy
 	{
-		private string model;
-		private DateTime creationDate;
-		private double batteryStatus;
+		protected string model;
+		protected DateTime creationDate;
+		protected double batteryStatus;
 
 
 		public RobotSpy(string model, DateTime creationDate, double BatteryStatus)

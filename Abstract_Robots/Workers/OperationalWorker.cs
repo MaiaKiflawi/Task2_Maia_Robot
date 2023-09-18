@@ -8,8 +8,8 @@ namespace Robots_inc
 {
     public class OperationalWorker :Worker 
     {
-        private double hourlyPay;
-        private int workHours;
+        protected double hourlyPay;
+        protected int workHours;
 
         public OperationalWorker(string name, string id, DateTime bDate, string pass, double hourlyPay, int workHours)
             : base(name, id, bDate, pass)
