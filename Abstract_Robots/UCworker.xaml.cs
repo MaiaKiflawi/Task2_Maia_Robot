@@ -46,9 +46,13 @@ namespace Robots_inc
         public SolidColorBrush BgColour(Worker worker)
         {
             if (worker is GeneralManager)
+            {
                 return Brushes.LightBlue;
+            }
             else if (worker is OperationManager)
+            {
                 return Brushes.LightGray;
+            }
             return Brushes.Beige;
         }
 
