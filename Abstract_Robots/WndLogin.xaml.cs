@@ -42,12 +42,12 @@ namespace Robots_inc
         public List<Worker> AllWorkersLst()
         {
             List<Worker> workersLst = new List<Worker>();
-            workersLst.Add(new OperationalWorker("Jake", "123456789", DateTime.Now, "pass1", 40, 12));
-            workersLst.Add(new OperationalWorker("Emma", "223456789", DateTime.Now, "pass2", 40, 12));
-            workersLst.Add(new OperationalWorker("Mike", "323456789", DateTime.Now, "pass3", 32, 10));
-            workersLst.Add(new OperationManager(52.5, 8, 2, "Josef", "987654321", DateTime.Now, "4pass"));
-            workersLst.Add(new OperationManager(55, 12, 2, "Samantha", "887654321", DateTime.Now, "5pass"));
-            workersLst.Add(new GeneralManager(20000, 10, 4, "Jimmy", "1928374655", DateTime.Now, "6pass6"));
+            workersLst.Add(new OperationalWorker("Jake", "123456789", new DateTime(1987,02,01), "pass1", 40, 12));
+            workersLst.Add(new OperationalWorker("Emma", "223456789", new DateTime(1997,07,05), "pass2", 40, 12));
+            workersLst.Add(new OperationalWorker("Mike", "323456789", new DateTime(1965,10,30), "pass3", 32, 10));
+            workersLst.Add(new OperationManager(52.5, 8, 2, "Josef", "987654321", new DateTime(2000,12,16), "4pass"));
+            workersLst.Add(new OperationManager(55, 12, 2, "Samantha", "887654321", new DateTime(1991,09,21), "5pass"));
+            workersLst.Add(new GeneralManager(20000, 10, 4, "Jimmy", "1928374655", new DateTime(1974,05,06), "6pass6"));
             return workersLst;
         }
 

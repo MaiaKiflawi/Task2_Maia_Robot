@@ -22,6 +22,7 @@ namespace Robots_inc
             this.password = pass;
         }
 
+        public string FullName { get { return fullName; } }
         public string GetFullName() {  return fullName; }
         public string GetIdNumber() { return idNumber; }
         public DateTime GetBirthDate() { return birthDate; }
